@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\Desktop\\Curso C# Nivel 2\\POO\\POO\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{868AE047-6351-4387-9762-53815A1897D6}|Ejemplo-2\\Ejemplo-2.csproj|C:\\Users\\Usuario\\Desktop\\Curso C# Nivel 2\\POO\\POO\\ejemplo-2\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{868AE047-6351-4387-9762-53815A1897D6}|Ejemplo-2\\Ejemplo-2.csproj|solutionrelative:ejemplo-2\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{868AE047-6351-4387-9762-53815A1897D6}|Ejemplo-2\\Ejemplo-2.csproj|C:\\Users\\Usuario\\Desktop\\Curso C# Nivel 2\\POO\\POO\\ejemplo-2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{868AE047-6351-4387-9762-53815A1897D6}|Ejemplo-2\\Ejemplo-2.csproj|solutionrelative:ejemplo-2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{868AE047-6351-4387-9762-53815A1897D6}|Ejemplo-2\\Ejemplo-2.csproj|C:\\Users\\Usuario\\Desktop\\Curso C# Nivel 2\\POO\\POO\\ejemplo-2\\ventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{868AE047-6351-4387-9762-53815A1897D6}|Ejemplo-2\\Ejemplo-2.csproj|solutionrelative:ejemplo-2\\ventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{868AE047-6351-4387-9762-53815A1897D6}|Ejemplo-2\\Ejemplo-2.csproj|c:\\users\\usuario\\desktop\\curso c# nivel 2\\poo\\poo\\ejemplo-2\\notas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{868AE047-6351-4387-9762-53815A1897D6}|Ejemplo-2\\Ejemplo-2.csproj|solutionrelative:ejemplo-2\\notas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Notas.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Curso C# Nivel 2\\POO\\POO\\Ejemplo-2\\Notas.cs",
+              "RelativeDocumentMoniker": "Ejemplo-2\\Notas.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Curso C# Nivel 2\\POO\\POO\\Ejemplo-2\\Notas.cs",
+              "RelativeToolTip": "Ejemplo-2\\Notas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T18:05:17.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Curso C# Nivel 2\\POO\\POO\\Ejemplo-2\\Program.cs",
+              "RelativeDocumentMoniker": "Ejemplo-2\\Program.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Curso C# Nivel 2\\POO\\POO\\Ejemplo-2\\Program.cs",
+              "RelativeToolTip": "Ejemplo-2\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAwCsAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T01:06:20.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Ventas.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Curso C# Nivel 2\\POO\\POO\\Ejemplo-2\\Ventas.cs",
+              "RelativeDocumentMoniker": "Ejemplo-2\\Ventas.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Curso C# Nivel 2\\POO\\POO\\Ejemplo-2\\Ventas.cs",
+              "RelativeToolTip": "Ejemplo-2\\Ventas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T05:11:55.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Articulo.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Curso C# Nivel 2\\POO\\POO\\Ejemplo-2\\Articulo.cs",
+              "RelativeDocumentMoniker": "Ejemplo-2\\Articulo.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Curso C# Nivel 2\\POO\\POO\\Ejemplo-2\\Articulo.cs",
+              "RelativeToolTip": "Ejemplo-2\\Articulo.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T01:08:47.022Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
