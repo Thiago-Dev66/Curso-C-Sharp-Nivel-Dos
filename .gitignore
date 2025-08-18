@@ -1,0 +1,32 @@
+## Archivos de compilación
+bin/
+obj/
+
+## Archivos de usuario de Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Archivos temporales
+*.tmp
+*.log
+*.vspscc
+*.vssscc
+
+## Configuración de Visual Studio
+.vs/
+
+## Paquetes NuGet (se restauran con "dotnet restore")
+*.nupkg
+*.snupkg
+packages/
+
+## Archivos de configuración locales
+*.config
+appsettings.*.json
+
+## Otros innecesarios
+_ReSharper*/
+*.resharper
+*.DotSettings.user
