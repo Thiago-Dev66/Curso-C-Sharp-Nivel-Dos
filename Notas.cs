@@ -39,7 +39,7 @@ namespace Ejemplo_2
 
 
             //Encapsulamiento: un miembro de una clase no tendría que ser accedido directamente desde fuera de la clase.
-            //Las variables que escribimos no se aceden desde el exterior, sino que se accede a través de métodos (funciones) de la clase.
+            //Las variables que escribimos no se acceden desde el exterior, sino que se accede a través de métodos (funciones) de la clase.
 
             // Modificadores de visibilidad (acceso): los modificadores de visibilidad controlan el acceso a los miembros de una clase.
             // Los modificadores de visibilidad son palabras clave que se utilizan para especificar el nivel de acceso a los miembros de una clase.
