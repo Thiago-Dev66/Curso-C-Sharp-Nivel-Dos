@@ -19,8 +19,17 @@ namespace Ejemplo_Controles
 
         private void perfilPersonaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(Form1))
+                {
+                    return;
+                }
+            }
+
             Form1 ventana = new Form1(); //Creamos una instancia del objeto "Form1" dentro de la ventana principal
-            ventana.ShowDialog(); //y mostramos 
+            ventana.MdiParent = this;
+            ventana.Show(); //y mostramos 
         }
 
         private void tsPerfilPersona_Click(object sender, EventArgs e)

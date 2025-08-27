@@ -39,7 +39,7 @@ namespace Ejemplo_2
 
 
             //Encapsulamiento: un miembro de una clase no tendría que ser accedido directamente desde fuera de la clase.
-            //Las variables que escribimos no se acceden desde el exterior, sino que se accede a través de métodos (funciones) de la clase.
+            //Las variables que escribimos no se aceden desde el exterior, sino que se accede a través de métodos (funciones) de la clase.
 
             // Modificadores de visibilidad (acceso): los modificadores de visibilidad controlan el acceso a los miembros de una clase.
             // Los modificadores de visibilidad son palabras clave que se utilizan para especificar el nivel de acceso a los miembros de una clase.
@@ -76,17 +76,51 @@ namespace Ejemplo_2
         // Los destructores no tiene mucha relevancia en C# ya que el recolector de basura (garbage collector) lo hace de maner automatica
         // a diferencia de otros lenguajes como C++ donde el programador debe liberar la memoria manualmente.
 
+        //POO++
 
         //COLECCIONES
 
-            //Una coleccion es como un vector mejorado. La misma es un obejeto y su tamaño es dinamico a diferencia de los vectores.
-            //El tipo de coleccion depende del proyecto, la más importante es la tipo "list".
+        //Una coleccion es como un vector mejorado. La misma es un obejeto y su tamaño es dinamico a diferencia de los vectores.
+        //El tipo de coleccion depende del proyecto, la más importante es la tipo "list".
 
-            //Definimos el objeto con el cual vamos a trabajar
+        //Definimos el objeto con el cual vamos a trabajar
 
-       
+        //SOBREESCRITURA DE METODOS 
 
+            //La sobrescritura de metodos, se da sobre un metodo que heredo de una clase base a diferecncia de la sobrecarga.
+            //Funciona cuando invocamos al metodo en el objeto en concreto.
+
+            /*Hay un método en la clase padre (superclase).
+
+            La clase hija (subclase) escribe otra versión del mismo método.
+
+            Cuando llamas a ese método desde un objeto de la subclase, se ejecuta la versión sobrescrita, no la del padre.
+
+            🔹 Objetivo principal:
+            Permitir que una subclase adapte o extienda el comportamiento que hereda, sin modificar el código de la superclase.
             
+             casteo explicito (conversion de datos explicita): 
+            
+                Animal a1 = g1;
+                Gato g8 = (Gato)a1; (Le aseguro al compilador que dentro de a1(animal) hay un gato para que lo transforme) 
+                porque las definiciones(metodos, propiedades) dentro de una jerarquia(herencia) se conocen de a bajo para arriba
+                
+            */
+
+         //POLIMORFISMO
+
+            //El polimorfismo es la capacidad que tienen los objetos que bajo un mismo estimulo comportarse de manera diferente 
+            //(ejemplo del metodo "comunicarse").
+
+        // TIPOS DE CLASES
+
+            //Abstract: No permite crear una instancia de la clase.
+            //Sealed: Lo contrario a abstract, la clase no puede ser heredada.
+            //Static: Una clase que siempre está disponible y que no necesita ser instanciada (CONSOLE.WriteLine). 
+
+
+
+
 
 
 

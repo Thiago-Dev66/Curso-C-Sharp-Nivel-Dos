@@ -112,12 +112,19 @@ namespace Ejemplo_2
             //El polimorfismo es la capacidad que tienen los objetos que bajo un mismo estimulo comportarse de manera diferente 
             //(ejemplo del metodo "comunicarse").
 
-        // TIPOS DE CLASES
+        // MODIFICADORES DE CLASE
 
             //Abstract: No permite crear una instancia de la clase.
             //Sealed: Lo contrario a abstract, la clase no puede ser heredada.
             //Static: Una clase que siempre está disponible y que no necesita ser instanciada (CONSOLE.WriteLine). 
 
+        //SQL (Structured Query Lenguage)
+
+            //Persistir: guardar datos en mi base de datos.
+            //Es un lugar donde alojamos datos de nuestra aplicación.
+            //Hay dos grandes tipos: SQL (relacionales) (basadas en tablas que tienen relacion entre sí)
+                                   //NO-SQL (No relacionales) trabajan con multiples servidores y no requieren esquema predefinido.
+            //
 
 
 
