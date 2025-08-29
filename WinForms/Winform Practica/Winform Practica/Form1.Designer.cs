@@ -30,6 +30,7 @@
         {
             this.bt1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.tB1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // bt1
@@ -38,7 +39,7 @@
             this.bt1.FlatAppearance.BorderSize = 0;
             this.bt1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.bt1.Location = new System.Drawing.Point(323, 208);
+            this.bt1.Location = new System.Drawing.Point(312, 413);
             this.bt1.Name = "bt1";
             this.bt1.Size = new System.Drawing.Size(234, 70);
             this.bt1.TabIndex = 0;
@@ -51,7 +52,7 @@
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(319, 165);
+            this.label1.Location = new System.Drawing.Point(308, 370);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 26);
             this.label1.TabIndex = 1;
@@ -59,12 +60,24 @@
             this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
             // 
+            // tB1
+            // 
+            this.tB1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tB1.Location = new System.Drawing.Point(275, 198);
+            this.tB1.MaxLength = 50;
+            this.tB1.Multiline = true;
+            this.tB1.Name = "tB1";
+            this.tB1.Size = new System.Drawing.Size(317, 76);
+            this.tB1.TabIndex = 2;
+            this.tB1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tB1_KeyPress);
+            // 
             // WinformPractica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(879, 560);
+            this.Controls.Add(this.tB1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt1);
             this.MaximizeBox = false;
@@ -85,6 +98,7 @@
 
         private System.Windows.Forms.Button bt1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tB1;
     }
 }
 

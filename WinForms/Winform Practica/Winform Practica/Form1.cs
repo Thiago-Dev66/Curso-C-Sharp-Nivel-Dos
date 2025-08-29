@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,8 +31,12 @@ namespace Winform_Practica
         private void bt1_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("Evento OnClick");
-            this.BackColor = Color.Green;
-         
+            //this.BackColor = Color.Green;
+            if (tB1.Text == "")
+                tB1.BackColor = Color.AliceBlue;
+            else
+                tB1.BackColor = System.Drawing.SystemColors.Control;
+            bt1.Cursor = Cursors.Cross;
         }
 
         private void WinformPractica_Click(object sender, EventArgs e)
@@ -56,6 +61,12 @@ namespace Winform_Practica
             label1.Cursor = Cursors.Hand;
         }
 
-       
+        private void tB1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48 || e.KeyChar > 59) && e.KeyChar != 8)
+                e.Handled = true;
+            else
+                e.Handled = false;
+        }
     }
 }
