@@ -68,5 +68,10 @@ namespace Winform_Practica
             else
                 e.Handled = false;
         }
+
+        private void txtBox2_Leave(object sender, EventArgs e)
+        {
+            MessageBox.Show("Tiene " + txtBox2.Text.Length + " caracteres");
+        }
     }
 }

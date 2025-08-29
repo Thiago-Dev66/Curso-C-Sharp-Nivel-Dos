@@ -31,6 +31,7 @@
             this.bt1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tB1 = new System.Windows.Forms.TextBox();
+            this.txtBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // bt1
@@ -63,7 +64,7 @@
             // tB1
             // 
             this.tB1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tB1.Location = new System.Drawing.Point(275, 198);
+            this.tB1.Location = new System.Drawing.Point(69, 174);
             this.tB1.MaxLength = 50;
             this.tB1.Multiline = true;
             this.tB1.Name = "tB1";
@@ -71,12 +72,23 @@
             this.tB1.TabIndex = 2;
             this.tB1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tB1_KeyPress);
             // 
+            // txtBox2
+            // 
+            this.txtBox2.Location = new System.Drawing.Point(502, 175);
+            this.txtBox2.Multiline = true;
+            this.txtBox2.Name = "txtBox2";
+            this.txtBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBox2.Size = new System.Drawing.Size(307, 75);
+            this.txtBox2.TabIndex = 3;
+            this.txtBox2.Leave += new System.EventHandler(this.txtBox2_Leave);
+            // 
             // WinformPractica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(879, 560);
+            this.Controls.Add(this.txtBox2);
             this.Controls.Add(this.tB1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt1);
@@ -99,6 +111,7 @@
         private System.Windows.Forms.Button bt1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tB1;
+        private System.Windows.Forms.TextBox txtBox2;
     }
 }
 
