@@ -28,12 +28,11 @@ namespace Primera_lectura_en_BD_y_ADO.NET
 
             Conexion.ConnectionString = "server=(local)\\SQLEXPRESS; database=POKEDEX_DB; integrated security=true"; //nos conectamos a la DB
             Cmd.CommandType = System.Data.CommandType.Text; //especificamos el comando para relaizar la accion
-            Cmd.CommandText = "select Nombre, Numero, Descripcion, UrlImagen from POKEMONS"; //pasamos la consulta
+            Cmd.CommandText = "select Numero, Nombre, p.Descripcion, e.Descripcion as Tipo, UrlImagen, d.Descripcion as Debilidad from POKEMONS p, ELEMENTOS e, ELEMENTOS d where e.id = p.IdTipo and d.Id = p.IdDebilidad;\r\n"; //pasamos la consulta
             Cmd.Connection = Conexion;
 
             Conexion.Open(); //abrimos la conexion
             Lector = Cmd.ExecuteReader(); //ejecutamos la lectura que nos va a dar el objeto "DataReader"
-
 
             try
             {
@@ -41,10 +40,14 @@ namespace Primera_lectura_en_BD_y_ADO.NET
                 {
                     Pokemon aux = new Pokemon();
 
+                    aux.Numero = Lector.GetInt32(0);
                     aux.Nombre = (string)Lector["Nombre"];
                     aux.Descripcion = (string)Lector["Descripcion"];
-                    aux.Numero = Lector.GetInt32(1);
                     aux.UrlImagen = (string)Lector["UrlImagen"];
+                    aux.Tipo = new Elemento();
+                    aux.Tipo.Descripcion = (string)Lector["Tipo"];
+                    aux.Debilidad = new Elemento();
+                    aux.Debilidad.Descripcion = (string)Lector["Debilidad"];
 
                     lista.Add(aux);
                 }

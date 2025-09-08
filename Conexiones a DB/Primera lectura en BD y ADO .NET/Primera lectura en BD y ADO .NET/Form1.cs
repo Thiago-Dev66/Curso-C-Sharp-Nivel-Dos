@@ -24,7 +24,27 @@ namespace Primera_lectura_en_BD_y_ADO.NET
             PokedexServer server = new PokedexServer();
             listaPokemon = server.ListaP();
             dgvPokemon.DataSource = listaPokemon;
-            picboxPokemon.Load(listaPokemon[0].UrlImagen);
+            ImageLoader(listaPokemon[0].UrlImagen);
+            dgvPokemon.Columns["Urlimagen"].Visible = false;
+        }
+
+        private void dgvPokemon_SelectionChanged(object sender, EventArgs e)
+        {
+            Pokemon seleccionado = (Pokemon)dgvPokemon.CurrentRow.DataBoundItem;
+            ImageLoader(seleccionado.UrlImagen);
+
+        }
+
+        private void ImageLoader(string Imagen)
+        {
+            try
+            {
+                picboxPokemon.Load(Imagen);
+            }
+            catch (Exception)
+            {
+                picboxPokemon.Load("https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg");
+            }
         }
     }
 }
