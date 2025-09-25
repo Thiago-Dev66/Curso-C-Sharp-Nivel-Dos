@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+
+namespace Desarrollo_App_Conexión_a_DB
+{
+    class DiscosServer
+    {
+        public List<Disco> ListaDisco()
+        {
+            List<Disco> ListaD = new List<Disco>();
+
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader;
+
+            conexion.ConnectionString = "server=(local)\\SQLEXPRESS; database=DISCOS_DB; integrated security=true;";
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = "select Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa as Cover, e.Descripcion as Estilo, t.Descripcion as Formato from DISCOS D, ESTILOS E, TIPOSEDICION T where e.Id = IdEstilo and t.Id = IdTipoEdicion";
+            cmd.Connection = conexion;
+
+            conexion.Open();
+            reader = cmd.ExecuteReader();
+
+            try
+            {
+                while (reader.Read())
+                {
+                    Disco disco1 = new Disco();
+
+                    disco1.Titulo = (string)reader["Titulo"];
+                    disco1.FechaDeLazamiento = (DateTime)reader.GetDateTime(1);
+                    disco1.CantidadDeCanciones = (int)reader["CantidadCanciones"];
+                    disco1.UrlImagenCover = (string)reader["Cover"];
+                    disco1.Estilo = (string)reader["Estilo"];
+                    disco1.Formato = (string)reader["Formato"];
+
+                    ListaD.Add(disco1);
+                }
+
+                return ListaD;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+        }   
+    }
+}
