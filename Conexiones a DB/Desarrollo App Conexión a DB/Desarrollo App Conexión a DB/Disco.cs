@@ -12,7 +12,7 @@ namespace Desarrollo_App_Conexión_a_DB
         public DateTime FechaDeLazamiento { get; set; }
         public int CantidadDeCanciones { get; set; }
         public string UrlImagenCover { get; set; }
-        public string Estilo { get; set; }
-        public string Formato { get; set; }
+        public Estilos Estilo { get; set; }
+        public TipoEdicion Edicion { get; set; }
     }
 }

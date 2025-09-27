@@ -35,8 +35,10 @@ namespace Desarrollo_App_Conexión_a_DB
                     disco1.FechaDeLazamiento = (DateTime)reader.GetDateTime(1);
                     disco1.CantidadDeCanciones = (int)reader["CantidadCanciones"];
                     disco1.UrlImagenCover = (string)reader["Cover"];
-                    disco1.Estilo = (string)reader["Estilo"];
-                    disco1.Formato = (string)reader["Formato"];
+                    disco1.Estilo = new Estilos();
+                    disco1.Estilo.Descripcion = (string)reader["Estilo"];
+                    disco1.Edicion = new TipoEdicion();
+                    disco1.Edicion.Description = (string)reader["Formato"];
 
                     ListaD.Add(disco1);
                 }

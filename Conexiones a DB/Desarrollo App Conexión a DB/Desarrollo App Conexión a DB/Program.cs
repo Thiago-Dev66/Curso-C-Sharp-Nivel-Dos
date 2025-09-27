@@ -16,7 +16,7 @@ namespace Desarrollo_App_Conexión_a_DB
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new DiscosForm());
         }
     }
 }

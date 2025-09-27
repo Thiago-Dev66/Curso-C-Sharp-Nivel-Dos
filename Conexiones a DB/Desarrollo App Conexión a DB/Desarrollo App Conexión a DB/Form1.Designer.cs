@@ -1,6 +1,6 @@
 ﻿namespace Desarrollo_App_Conexión_a_DB
 {
-    partial class Form1
+    partial class DiscosForm
     {
         /// <summary>
         /// Required designer variable.
@@ -55,15 +55,16 @@
             this.pbxDisco.TabIndex = 1;
             this.pbxDisco.TabStop = false;
             // 
-            // Form1
+            // DiscosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1221, 450);
             this.Controls.Add(this.pbxDisco);
             this.Controls.Add(this.dgvDisco);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "DiscosForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Discos Form";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDisco)).EndInit();

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Desarrollo_App_Conexión_a_DB
 {
-    public partial class Form1 : Form
+    public partial class DiscosForm : Form
     {
         private List<Disco> ListaD;
 
-        public Form1()
+        public DiscosForm()
         {
             InitializeComponent();
         }
@@ -24,7 +24,8 @@ namespace Desarrollo_App_Conexión_a_DB
             DiscosServer server = new DiscosServer();
             ListaD = server.ListaDisco();
             dgvDisco.DataSource = ListaD;
-            pbxDisco.Load(ListaD[0].UrlImagenCover);
+            dgvDisco.Columns["UrlImagenCover"].Visible = false;
+            
         }
 
         private void dgvDisco_SelectionChanged(object sender, EventArgs e)
