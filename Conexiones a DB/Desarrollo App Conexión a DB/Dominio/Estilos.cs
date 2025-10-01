@@ -5,7 +5,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Desarrollo_App_Conexión_a_DB
+namespace Business_logic_layer__BLL_
 {
     public class Estilos
     {

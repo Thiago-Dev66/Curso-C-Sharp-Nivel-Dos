@@ -35,3 +35,14 @@ select D.Titulo, D.Titulo, E.Descripcion as estilo from DISCOS D, ESTILOS E
 -- ELIMINAR --
 
 delete from DISCOS WHERE id = 5
+
+--OTROS COMANDOS
+
+-- Inicio una transacción
+BEGIN TRANSACTION;
+
+-- Si estoy conforme:
+COMMIT;
+
+-- Si me equivoqué:
+ROLLBACK;
