@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Business_logic_layer__BLL_;
 
-namespace Desarrollo_App_Conexión_a_DB
+namespace Data_access_layer__DAL_
 {
-    class DiscosServer
+    public class DiscosServer
     {
         public List<Disco> ListaDisco()
         {

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business_logic_layer__BLL_;
+using Data_access_layer__DAL_;
 
 namespace Desarrollo_App_Conexión_a_DB
 {
