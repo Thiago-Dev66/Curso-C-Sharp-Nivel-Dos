@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Business_logic_layer__BLL_;
-using Data_access_layer__DAL_;
+using Dominio;
+using Negocio;
 
 namespace Desarrollo_App_Conexión_a_DB
 {
@@ -46,6 +46,12 @@ namespace Desarrollo_App_Conexión_a_DB
 
                 pbxDisco.Load("https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmAgregarDisco agregar = new frmAgregarDisco();
+            agregar.ShowDialog();
         }
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using Business_logic_layer__BLL_;
+using Dominio;
 
-namespace Data_access_layer__DAL_
+namespace Negocio 
 {
     public class DiscosServer
     {
@@ -24,7 +24,7 @@ namespace Data_access_layer__DAL_
             cmd.Connection = conexion;
 
             conexion.Open();
-            reader = cmd.ExecuteReader();
+            reader = cmd.ExecuteReader(); 
 
             try
             {
@@ -56,5 +56,27 @@ namespace Data_access_layer__DAL_
             }
 
         }   
+
+        public void Agregar(Disco disco)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.SetearConsulta("INSERT INTO DISCOS (Titulo, FechaLanzamiento, CantidadCanciones) VALUES ('" + disco.Titulo + "', '" + disco.FechaDeLazamiento + "', " + disco.CantidadDeCanciones + ")");
+                datos.EjecutarInsert();
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            finally
+            {
+                datos.ConnectionClose();
+
+            }
+        }
     }
+
 }

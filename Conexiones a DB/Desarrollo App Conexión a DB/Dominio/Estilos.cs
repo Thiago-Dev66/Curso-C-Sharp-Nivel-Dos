@@ -5,7 +5,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business_logic_layer__BLL_
+namespace Dominio
 {
     public class Estilos
     {

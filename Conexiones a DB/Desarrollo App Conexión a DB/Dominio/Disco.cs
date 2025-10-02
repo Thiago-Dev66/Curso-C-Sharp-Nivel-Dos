@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business_logic_layer__BLL_
+namespace Dominio
 {
     public class Disco
     {

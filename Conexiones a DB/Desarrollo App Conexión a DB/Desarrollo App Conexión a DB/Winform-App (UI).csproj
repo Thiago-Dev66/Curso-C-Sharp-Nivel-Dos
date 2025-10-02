@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarDisco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarDisco.Designer.cs">
+      <DependentUpon>AgregarDisco.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDiscos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AgregarDisco.resx">
+      <DependentUpon>AgregarDisco.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDiscos.resx">
       <DependentUpon>frmDiscos.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,13 +93,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Data access layer %28DAL%29\Data access layer %28DAL%29.csproj">
+    <ProjectReference Include="..\Data access layer %28DAL%29\Negocio %28BLL y DAL%29.csproj">
       <Project>{f9299b2d-62e1-4299-adc4-658dd7fb6754}</Project>
-      <Name>Data access layer %28DAL%29</Name>
+      <Name>Negocio %28BLL y DAL%29</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Dominio\Business logic layer %28BLL%29.csproj">
+    <ProjectReference Include="..\Dominio\Dominio %28Modelo Compartido%29.csproj">
       <Project>{a510473d-2e2f-4cfd-b237-0d5c890583dd}</Project>
-      <Name>Business logic layer %28BLL%29</Name>
+      <Name>Dominio %28Modelo Compartido%29</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

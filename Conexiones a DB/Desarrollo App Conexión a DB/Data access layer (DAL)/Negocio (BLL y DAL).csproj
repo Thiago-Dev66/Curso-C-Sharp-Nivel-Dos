@@ -41,13 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDatos.cs" />
     <Compile Include="DiscosServer.cs" />
+    <Compile Include="EstilosServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dominio\Business logic layer %28BLL%29.csproj">
+    <ProjectReference Include="..\Dominio\Dominio %28Modelo Compartido%29.csproj">
       <Project>{a510473d-2e2f-4cfd-b237-0d5c890583dd}</Project>
-      <Name>Business logic layer %28BLL%29</Name>
+      <Name>Dominio %28Modelo Compartido%29</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

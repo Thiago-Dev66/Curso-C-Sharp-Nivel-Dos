@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desarrollo App Conexión a DB", "Desarrollo App Conexión a DB\Desarrollo App Conexión a DB.csproj", "{201493E6-8ECC-4F0F-999A-10767B998CC0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Winform-App (UI)", "Desarrollo App Conexión a DB\Winform-App (UI).csproj", "{201493E6-8ECC-4F0F-999A-10767B998CC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business logic layer (BLL)", "Dominio\Business logic layer (BLL).csproj", "{A510473D-2E2F-4CFD-B237-0D5C890583DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio (Modelo Compartido)", "Dominio\Dominio (Modelo Compartido).csproj", "{A510473D-2E2F-4CFD-B237-0D5C890583DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data access layer (DAL)", "Data access layer (DAL)\Data access layer (DAL).csproj", "{F9299B2D-62E1-4299-ADC4-658DD7FB6754}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio (BLL y DAL)", "Data access layer (DAL)\Negocio (BLL y DAL).csproj", "{F9299B2D-62E1-4299-ADC4-658DD7FB6754}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
