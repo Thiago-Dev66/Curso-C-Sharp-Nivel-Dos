@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+<<<<<<< HEAD
 using Dominio;
 
 namespace Negocio 
+=======
+using Business_logic_layer__BLL_;
+
+namespace Data_access_layer__DAL_
+>>>>>>> 41593083d5bca23c9f679c23df7443ad13a30f2e
 {
     public class DiscosServer
     {

@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD:Conexiones a DB/Desarrollo App Conexión a DB/Desarrollo App Conexión a DB/Winform-App (UI).csproj
     <Compile Include="AgregarDisco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,14 +59,22 @@
     <Compile Include="frmDiscos.cs">
       <SubType>Form</SubType>
     </Compile>
+=======
+    <Compile Include="frmDiscos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+>>>>>>> 41593083d5bca23c9f679c23df7443ad13a30f2e:Conexiones a DB/Desarrollo App Conexión a DB/Desarrollo App Conexión a DB/Desarrollo App Conexión a DB.csproj
     <Compile Include="frmDiscos.Designer.cs">
       <DependentUpon>frmDiscos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD:Conexiones a DB/Desarrollo App Conexión a DB/Desarrollo App Conexión a DB/Winform-App (UI).csproj
     <EmbeddedResource Include="AgregarDisco.resx">
       <DependentUpon>AgregarDisco.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> 41593083d5bca23c9f679c23df7443ad13a30f2e:Conexiones a DB/Desarrollo App Conexión a DB/Desarrollo App Conexión a DB/Desarrollo App Conexión a DB.csproj
     <EmbeddedResource Include="frmDiscos.resx">
       <DependentUpon>frmDiscos.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +102,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD:Conexiones a DB/Desarrollo App Conexión a DB/Desarrollo App Conexión a DB/Winform-App (UI).csproj
     <ProjectReference Include="..\Data access layer %28DAL%29\Negocio %28BLL y DAL%29.csproj">
       <Project>{f9299b2d-62e1-4299-adc4-658dd7fb6754}</Project>
       <Name>Negocio %28BLL y DAL%29</Name>
@@ -100,6 +110,15 @@
     <ProjectReference Include="..\Dominio\Dominio %28Modelo Compartido%29.csproj">
       <Project>{a510473d-2e2f-4cfd-b237-0d5c890583dd}</Project>
       <Name>Dominio %28Modelo Compartido%29</Name>
+=======
+    <ProjectReference Include="..\Data access layer %28DAL%29\Data access layer %28DAL%29.csproj">
+      <Project>{f9299b2d-62e1-4299-adc4-658dd7fb6754}</Project>
+      <Name>Data access layer %28DAL%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dominio\Business logic layer %28BLL%29.csproj">
+      <Project>{a510473d-2e2f-4cfd-b237-0d5c890583dd}</Project>
+      <Name>Business logic layer %28BLL%29</Name>
+>>>>>>> 41593083d5bca23c9f679c23df7443ad13a30f2e:Conexiones a DB/Desarrollo App Conexión a DB/Desarrollo App Conexión a DB/Desarrollo App Conexión a DB.csproj
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

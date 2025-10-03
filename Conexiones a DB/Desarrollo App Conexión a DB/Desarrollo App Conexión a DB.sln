@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio (Modelo Compartido)
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio (BLL y DAL)", "Data access layer (DAL)\Negocio (BLL y DAL).csproj", "{F9299B2D-62E1-4299-ADC4-658DD7FB6754}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business logic layer (BLL)", "Dominio\Business logic layer (BLL).csproj", "{A510473D-2E2F-4CFD-B237-0D5C890583DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data access layer (DAL)", "Data access layer (DAL)\Data access layer (DAL).csproj", "{F9299B2D-62E1-4299-ADC4-658DD7FB6754}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
