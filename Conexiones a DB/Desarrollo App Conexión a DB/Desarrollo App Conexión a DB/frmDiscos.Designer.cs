@@ -43,21 +43,13 @@
             this.dgvDisco.Name = "dgvDisco";
             this.dgvDisco.RowHeadersWidth = 62;
             this.dgvDisco.RowTemplate.Height = 28;
-<<<<<<< HEAD
             this.dgvDisco.Size = new System.Drawing.Size(797, 320);
-=======
-            this.dgvDisco.Size = new System.Drawing.Size(858, 320);
->>>>>>> 41593083d5bca23c9f679c23df7443ad13a30f2e
             this.dgvDisco.TabIndex = 0;
             this.dgvDisco.SelectionChanged += new System.EventHandler(this.dgvDisco_SelectionChanged);
             // 
             // pbxDisco
             // 
-<<<<<<< HEAD
             this.pbxDisco.Location = new System.Drawing.Point(854, 66);
-=======
-            this.pbxDisco.Location = new System.Drawing.Point(917, 66);
->>>>>>> 41593083d5bca23c9f679c23df7443ad13a30f2e
             this.pbxDisco.Name = "pbxDisco";
             this.pbxDisco.Size = new System.Drawing.Size(359, 320);
             this.pbxDisco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -78,12 +70,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1239, 450);
             this.Controls.Add(this.btnAgregar);
-=======
-            this.ClientSize = new System.Drawing.Size(1312, 450);
->>>>>>> 41593083d5bca23c9f679c23df7443ad13a30f2e
             this.Controls.Add(this.pbxDisco);
             this.Controls.Add(this.dgvDisco);
             this.Name = "DiscosForm";
