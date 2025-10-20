@@ -66,10 +66,10 @@ namespace Negocio
                 datos.SetearConsulta("INSERT INTO DISCOS (Titulo, FechaLanzamiento, CantidadCanciones) VALUES ('" + disco.Titulo + "', '" + disco.FechaDeLazamiento + "', " + disco.CantidadDeCanciones + ")");
                 datos.EjecutarInsert();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                throw e;
+                throw ex;
             }
             finally
             {

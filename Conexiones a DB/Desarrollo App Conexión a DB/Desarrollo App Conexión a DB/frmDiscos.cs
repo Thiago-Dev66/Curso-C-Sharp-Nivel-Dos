@@ -48,10 +48,15 @@ namespace Desarrollo_App_Conexión_a_DB
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAgregarDisco agregar = new frmAgregarDisco();
             agregar.ShowDialog();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

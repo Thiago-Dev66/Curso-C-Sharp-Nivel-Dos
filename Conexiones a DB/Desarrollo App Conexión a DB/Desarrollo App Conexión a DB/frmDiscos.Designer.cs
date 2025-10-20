@@ -31,6 +31,7 @@
             this.dgvDisco = new System.Windows.Forms.DataGridView();
             this.pbxDisco = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDisco)).BeginInit();
             this.SuspendLayout();
@@ -64,13 +65,24 @@
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.button1_Click);
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(1063, 393);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(150, 45);
+            this.btnCerrar.TabIndex = 3;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // DiscosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1239, 450);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.pbxDisco);
             this.Controls.Add(this.dgvDisco);
@@ -89,6 +101,7 @@
         private System.Windows.Forms.DataGridView dgvDisco;
         private System.Windows.Forms.PictureBox pbxDisco;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }
 

@@ -10,7 +10,7 @@ namespace Negocio
 {
     public class EstilosServer
     {
-        public List<Estilos> ListaE()
+        public List<Estilos> ListarEstilos()
         {
         
             List<Estilos> ListEstilo = new List<Estilos>();
@@ -21,12 +21,12 @@ namespace Negocio
 
             try
             {
-                Estilos aux = new Estilos();
 
                 while (Datos.Reader.Read())
                 {
+                    Estilos aux = new Estilos();
                     aux.Id = (int)Datos.Reader["Id"];
-                    aux.Descripcion = (string)Datos.Reader["Descripcion"];
+                    aux.Descripcion = (string)Datos.Reader["Estilo"];
 
                     ListEstilo.Add(aux);
                 }

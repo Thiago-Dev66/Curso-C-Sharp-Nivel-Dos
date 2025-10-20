@@ -35,6 +35,9 @@ select D.Titulo, D.Titulo, E.Descripcion as estilo from DISCOS D, ESTILOS E
 -- ELIMINAR --
 
 delete from DISCOS WHERE id = 5
+--Varias filas:
+delete from ESTILOS where id in (6, 7, 8)
+
 
 --OTROS COMANDOS
 

@@ -33,20 +33,42 @@ namespace Desarrollo_App_Conexión_a_DB
             {
                 AgregarD.Titulo = txtTitulo.Text;
                 AgregarD.FechaDeLazamiento = dtpFecha.Value;
-                AgregarD.CantidadDeCanciones = int.Parse(txtCantidadCanciones.Text);
+
+                if (!int.TryParse(txtCantidadCanciones.Text, out int cantidad))
+                {
+                    MessageBox.Show("Ingrese un valor valido");
+                    return;
+                }
+                AgregarD.CantidadDeCanciones = cantidad;
+                AgregarD.Estilo = (Estilos)cboEstilo.SelectedItem;
+                AgregarD.Edicion = (TipoEdicion)cboEdicion.SelectedItem;
 
                 negocio.Agregar(AgregarD);
 
                 MessageBox.Show("Se agregó con éxito!");
+                Close();
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.ToString());
             }
-            finally
+        }
+
+        private void frmAgregarDisco_Load(object sender, EventArgs e)
+        {
+            EstilosServer estilo = new EstilosServer();
+            TiposEdicionServer formato = new TiposEdicionServer();
+            
+            try
             {
-                Close();
+                cboEstilo.DataSource = estilo.ListarEstilos();
+                cboEdicion.DataSource = formato.ListEdicion();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString()); 
             }
         }
     }

@@ -45,6 +45,8 @@ namespace Negocio
         }
         public void EjecutarInsert()
         {
+            cmd.Connection = conn;
+
             try
             {
                 conn.Open();
