@@ -29,11 +29,11 @@ namespace Negocio
             try
             {
                 while (reader.Read())
-                {
+                {   
                     Disco disco1 = new Disco();
 
                     disco1.Titulo = (string)reader["Titulo"];
-                    disco1.FechaDeLazamiento = (DateTime)reader.GetDateTime(1);
+                    disco1.FechaDeLazamiento = reader.GetDateTime(1);
                     disco1.CantidadDeCanciones = (int)reader["CantidadCanciones"];
                     disco1.UrlImagenCover = (string)reader["Cover"];
                     disco1.Estilo = new Estilos();
@@ -63,7 +63,9 @@ namespace Negocio
 
             try
             {
-                datos.SetearConsulta("INSERT INTO DISCOS (Titulo, FechaLanzamiento, CantidadCanciones) VALUES ('" + disco.Titulo + "', '" + disco.FechaDeLazamiento + "', " + disco.CantidadDeCanciones + ")");
+                datos.SetearConsulta("INSERT INTO DISCOS (Titulo, FechaLanzamiento, CantidadCanciones, IdEstilo, IdTipoEdicion) VALUES ('" + disco.Titulo + "', '" + disco.FechaDeLazamiento + "', " + disco.CantidadDeCanciones + ", @IdEstilo, @IdTipoEdicion)");
+                datos.SetearParametros("@IdEstilo", disco.Estilo.Id);
+                datos.SetearParametros("@IdTipoEdicion", disco.Edicion.Id);
                 datos.EjecutarInsert();
             }
             catch (Exception ex)
