@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Negocio
 {
@@ -25,7 +26,9 @@ namespace Negocio
                 while (Datos.Reader.Read())
                 {
                     Estilos aux = new Estilos();
-                    aux.Id = (int)Datos.Reader["Id"];
+
+                    if (!(Datos.Reader.IsDBNull(Datos.Reader.GetOrdinal("Id"))))
+                        aux.Id = (int)Datos.Reader["Id"];
                     aux.Descripcion = (string)Datos.Reader["Estilo"];
 
                     ListEstilo.Add(aux);

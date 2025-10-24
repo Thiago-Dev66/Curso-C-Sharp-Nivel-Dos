@@ -23,10 +23,18 @@ namespace Desarrollo_App_Conexión_a_DB
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DiscosServer server = new DiscosServer();
-            ListaD = server.ListaDisco();
-            dgvDisco.DataSource = ListaD;
-            dgvDisco.Columns["UrlImagenCover"].Visible = false;
+            try
+            {
+                DiscosServer server = new DiscosServer();
+                ListaD = server.ListaDisco();
+                dgvDisco.DataSource = ListaD;
+                dgvDisco.Columns["UrlImagenCover"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+
+                ex.ToString();
+            }
             
         }
 

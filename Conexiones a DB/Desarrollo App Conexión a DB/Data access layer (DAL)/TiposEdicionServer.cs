@@ -25,7 +25,8 @@ namespace Negocio
                 {
                     TipoEdicion edicion = new TipoEdicion();
 
-                    edicion.Id = (int)edicionDatos.Reader["Id"];
+                    if(!(edicionDatos.Reader.IsDBNull(edicionDatos.Reader.GetOrdinal("Id"))))
+                        edicion.Id = (int)edicionDatos.Reader["Id"];
                     edicion.Description = (string)edicionDatos.Reader["Formato"];
 
                     tipoEdicionLista.Add(edicion);

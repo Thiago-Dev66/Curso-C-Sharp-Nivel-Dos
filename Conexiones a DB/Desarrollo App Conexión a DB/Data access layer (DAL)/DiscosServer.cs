@@ -35,7 +35,12 @@ namespace Negocio
                     disco1.Titulo = (string)reader["Titulo"];
                     disco1.FechaDeLazamiento = reader.GetDateTime(1);
                     disco1.CantidadDeCanciones = (int)reader["CantidadCanciones"];
-                    disco1.UrlImagenCover = (string)reader["Cover"];
+
+                    //if(!(reader.IsDBNull(reader.GetOrdinal("Cover"))))
+                    //disco1.UrlImagenCover = (string)reader["Cover"];
+                    if (!(reader["Cover"] is DBNull))
+                        disco1.UrlImagenCover = (string)reader["Cover"];
+
                     disco1.Estilo = new Estilos();
                     disco1.Estilo.Descripcion = (string)reader["Estilo"];
                     disco1.Edicion = new TipoEdicion();
