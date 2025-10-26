@@ -68,9 +68,10 @@ namespace Negocio
 
             try
             {
-                datos.SetearConsulta("INSERT INTO DISCOS (Titulo, FechaLanzamiento, CantidadCanciones, IdEstilo, IdTipoEdicion) VALUES ('" + disco.Titulo + "', '" + disco.FechaDeLazamiento + "', " + disco.CantidadDeCanciones + ", @IdEstilo, @IdTipoEdicion)");
+                datos.SetearConsulta("INSERT INTO DISCOS (Titulo, FechaLanzamiento, CantidadCanciones, IdEstilo, IdTipoEdicion, UrlImagenTapa) VALUES ('" + disco.Titulo + "', '" + disco.FechaDeLazamiento + "', " + disco.CantidadDeCanciones + ", @IdEstilo, @IdTipoEdicion, @UrlImagenTapa)");
                 datos.SetearParametros("@IdEstilo", disco.Estilo.Id);
                 datos.SetearParametros("@IdTipoEdicion", disco.Edicion.Id);
+                datos.SetearParametros("@UrlImagenTapa", disco.UrlImagenCover);
                 datos.EjecutarInsert();
             }
             catch (Exception ex)

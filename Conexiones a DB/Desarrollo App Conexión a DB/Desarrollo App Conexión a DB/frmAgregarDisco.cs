@@ -39,6 +39,7 @@ namespace Desarrollo_App_Conexión_a_DB
                     MessageBox.Show("Ingrese un valor valido");
                     return;
                 }
+                AgregarD.UrlImagenCover = txtUrlImagen.Text;
                 AgregarD.CantidadDeCanciones = cantidad;
                 AgregarD.Estilo = (Estilos)cboEstilo.SelectedItem;
                 AgregarD.Edicion = (TipoEdicion)cboEdicion.SelectedItem;
@@ -69,6 +70,24 @@ namespace Desarrollo_App_Conexión_a_DB
             {
 
                 MessageBox.Show(ex.ToString()); 
+            }
+        }
+
+        private void txtUrlImagen_Leave(object sender, EventArgs e)
+        {
+            ImageLoader(txtUrlImagen.Text);
+        }
+
+        private void ImageLoader(string Image)
+        {
+            try
+            {
+                pbxUrlImagen.Load(Image);
+            }
+            catch (Exception)
+            {
+
+                pbxUrlImagen.Load("https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg");
             }
         }
     }
