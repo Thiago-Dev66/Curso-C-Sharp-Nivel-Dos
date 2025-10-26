@@ -31,7 +31,7 @@ namespace Negocio
                 while (reader.Read())
                 {   
                     Disco disco1 = new Disco();
-
+      
                     disco1.Titulo = (string)reader["Titulo"];
                     disco1.FechaDeLazamiento = reader.GetDateTime(1);
                     disco1.CantidadDeCanciones = (int)reader["CantidadCanciones"];

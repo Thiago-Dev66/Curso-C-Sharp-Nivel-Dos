@@ -23,19 +23,7 @@ namespace Desarrollo_App_Conexión_a_DB
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            try
-            {
-                DiscosServer server = new DiscosServer();
-                ListaD = server.ListaDisco();
-                dgvDisco.DataSource = ListaD;
-                dgvDisco.Columns["UrlImagenCover"].Visible = false;
-            }
-            catch (Exception ex)
-            {
-
-                ex.ToString();
-            }
-            
+            Cargar();
         }
 
         private void dgvDisco_SelectionChanged(object sender, EventArgs e)
@@ -56,10 +44,26 @@ namespace Desarrollo_App_Conexión_a_DB
             }
         }
 
+        private void Cargar() 
+        {
+            try
+            {
+                DiscosServer server = new DiscosServer();
+                ListaD = server.ListaDisco();
+                dgvDisco.DataSource = ListaD;
+                dgvDisco.Columns["UrlImagenCover"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+
+                ex.ToString();
+            }
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAgregarDisco agregar = new frmAgregarDisco();
             agregar.ShowDialog();
+            Cargar();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

@@ -40,17 +40,21 @@
             // 
             this.dgvDisco.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvDisco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDisco.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvDisco.Location = new System.Drawing.Point(26, 66);
+            this.dgvDisco.MultiSelect = false;
             this.dgvDisco.Name = "dgvDisco";
             this.dgvDisco.RowHeadersWidth = 62;
             this.dgvDisco.RowTemplate.Height = 28;
-            this.dgvDisco.Size = new System.Drawing.Size(797, 320);
+            this.dgvDisco.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvDisco.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDisco.Size = new System.Drawing.Size(987, 320);
             this.dgvDisco.TabIndex = 0;
             this.dgvDisco.SelectionChanged += new System.EventHandler(this.dgvDisco_SelectionChanged);
             // 
             // pbxDisco
             // 
-            this.pbxDisco.Location = new System.Drawing.Point(854, 66);
+            this.pbxDisco.Location = new System.Drawing.Point(1031, 67);
             this.pbxDisco.Name = "pbxDisco";
             this.pbxDisco.Size = new System.Drawing.Size(359, 320);
             this.pbxDisco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -69,7 +73,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(1063, 393);
+            this.btnCerrar.Location = new System.Drawing.Point(863, 393);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(150, 45);
             this.btnCerrar.TabIndex = 3;
@@ -81,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1239, 450);
+            this.ClientSize = new System.Drawing.Size(1413, 455);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.pbxDisco);
