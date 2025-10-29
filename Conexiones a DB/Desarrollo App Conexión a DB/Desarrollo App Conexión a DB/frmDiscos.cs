@@ -43,7 +43,6 @@ namespace Desarrollo_App_Conexión_a_DB
                 pbxDisco.Load("https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg");
             }
         }
-
         private void Cargar() 
         {
             try
@@ -65,10 +64,21 @@ namespace Desarrollo_App_Conexión_a_DB
             agregar.ShowDialog();
             Cargar();
         }
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Disco seleccionado;
+            seleccionado = (Disco)dgvDisco.CurrentRow.DataBoundItem;
+            
+            frmAgregarDisco modificar = new frmAgregarDisco(seleccionado);
+            modificar.Text = "Modificar Disco";
+            modificar.ShowDialog();
+            Cargar();
+        }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Close();
         }
+
     }
 }

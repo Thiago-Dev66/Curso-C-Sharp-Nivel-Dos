@@ -14,14 +14,20 @@ namespace Desarrollo_App_Conexión_a_DB
 {
     public partial class frmAgregarDisco : Form
     {
+        private Disco disco = null;
         public frmAgregarDisco()
         {
             InitializeComponent();
         }
+        public frmAgregarDisco(Disco disco)
+        {
+            InitializeComponent();
+            this.disco = disco;
+        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void btnAgregarDisco_Click(object sender, EventArgs e)
@@ -39,8 +45,8 @@ namespace Desarrollo_App_Conexión_a_DB
                     MessageBox.Show("Ingrese un valor valido");
                     return;
                 }
-                AgregarD.UrlImagenCover = txtUrlImagen.Text;
                 AgregarD.CantidadDeCanciones = cantidad;
+                AgregarD.UrlImagenCover = txtUrlImagen.Text;
                 AgregarD.Estilo = (Estilos)cboEstilo.SelectedItem;
                 AgregarD.Edicion = (TipoEdicion)cboEdicion.SelectedItem;
 
@@ -65,6 +71,15 @@ namespace Desarrollo_App_Conexión_a_DB
             {
                 cboEstilo.DataSource = estilo.ListarEstilos();
                 cboEdicion.DataSource = formato.ListEdicion();
+
+                if (disco != null)
+                {
+                    txtTitulo.Text = disco.Titulo;
+                    dtpFecha.Value = disco.FechaDeLazamiento;
+                    txtCantidadCanciones.Text = disco.CantidadDeCanciones.ToString();
+                    txtUrlImagen.Text = disco.UrlImagenCover;
+
+                }
             }
             catch (Exception ex)
             {
