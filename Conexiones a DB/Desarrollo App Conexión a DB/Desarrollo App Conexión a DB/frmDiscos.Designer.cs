@@ -42,31 +42,34 @@
             this.dgvDisco.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvDisco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDisco.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvDisco.Location = new System.Drawing.Point(26, 66);
+            this.dgvDisco.Location = new System.Drawing.Point(17, 43);
+            this.dgvDisco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvDisco.MultiSelect = false;
             this.dgvDisco.Name = "dgvDisco";
             this.dgvDisco.RowHeadersWidth = 62;
             this.dgvDisco.RowTemplate.Height = 28;
             this.dgvDisco.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvDisco.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDisco.Size = new System.Drawing.Size(987, 320);
+            this.dgvDisco.Size = new System.Drawing.Size(658, 208);
             this.dgvDisco.TabIndex = 0;
             this.dgvDisco.SelectionChanged += new System.EventHandler(this.dgvDisco_SelectionChanged);
             // 
             // pbxDisco
             // 
-            this.pbxDisco.Location = new System.Drawing.Point(1031, 67);
+            this.pbxDisco.Location = new System.Drawing.Point(687, 44);
+            this.pbxDisco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbxDisco.Name = "pbxDisco";
-            this.pbxDisco.Size = new System.Drawing.Size(359, 320);
+            this.pbxDisco.Size = new System.Drawing.Size(239, 208);
             this.pbxDisco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxDisco.TabIndex = 1;
             this.pbxDisco.TabStop = false;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(26, 393);
+            this.btnAgregar.Location = new System.Drawing.Point(17, 255);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(150, 45);
+            this.btnAgregar.Size = new System.Drawing.Size(100, 29);
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -74,9 +77,10 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(863, 393);
+            this.btnCerrar.Location = new System.Drawing.Point(575, 255);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(150, 45);
+            this.btnCerrar.Size = new System.Drawing.Size(100, 29);
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -84,9 +88,10 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(207, 393);
+            this.btnModificar.Location = new System.Drawing.Point(138, 255);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(150, 45);
+            this.btnModificar.Size = new System.Drawing.Size(100, 29);
             this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -94,14 +99,15 @@
             // 
             // DiscosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1413, 455);
+            this.ClientSize = new System.Drawing.Size(941, 296);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.pbxDisco);
             this.Controls.Add(this.dgvDisco);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DiscosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Discos Form";

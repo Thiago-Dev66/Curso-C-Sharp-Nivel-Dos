@@ -20,7 +20,7 @@ namespace Negocio
 
             conexion.ConnectionString = "server=(local)\\SQLEXPRESS; database=DISCOS_DB; integrated security=true;";
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "select Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa as Cover, e.Descripcion as Estilo, t.Descripcion as Formato from DISCOS D, ESTILOS E, TIPOSEDICION T where e.Id = IdEstilo and t.Id = IdTipoEdicion";
+            cmd.CommandText = "select Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa as Cover, e.Descripcion as Estilo, t.Descripcion as Formato, E.Id as IdEstilo, T.Id as IdEdicion, D.Id as IdDisco from DISCOS D, ESTILOS E, TIPOSEDICION T where e.Id = IdEstilo and t.Id = IdTipoEdicion";
             cmd.Connection = conexion;
 
             conexion.Open();
@@ -31,7 +31,8 @@ namespace Negocio
                 while (reader.Read())
                 {   
                     Disco disco1 = new Disco();
-      
+
+                    disco1.Id = (int)reader["IdDisco"];
                     disco1.Titulo = (string)reader["Titulo"];
                     disco1.FechaDeLazamiento = reader.GetDateTime(1);
                     disco1.CantidadDeCanciones = (int)reader["CantidadCanciones"];
@@ -43,7 +44,9 @@ namespace Negocio
 
                     disco1.Estilo = new Estilos();
                     disco1.Estilo.Descripcion = (string)reader["Estilo"];
+                    disco1.Estilo.Id = (int)reader["IdEstilo"];
                     disco1.Edicion = new TipoEdicion();
+                    disco1.Edicion.Id = (int)reader["IdEdicion"];
                     disco1.Edicion.Description = (string)reader["Formato"];
 
                     ListaD.Add(disco1);
@@ -84,6 +87,34 @@ namespace Negocio
                 datos.ConnectionClose();
 
             }
+        }
+        public void Modificar(Disco disco) 
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.SetearConsulta("update DISCOS set Titulo = @titulo, FechaLanzamiento = @fecha, CantidadCanciones = @cantidad, UrlImagenTapa = @url, IdEstilo = @idestilo, IdTipoEdicion = @idedicion where Id = @id");
+                datos.SetearParametros("@titulo", disco.Titulo);
+                datos.SetearParametros("@fecha", disco.FechaDeLazamiento);
+                datos.SetearParametros("@cantidad", disco.CantidadDeCanciones);
+                datos.SetearParametros("@url", disco.UrlImagenCover);
+                datos.SetearParametros("@idestilo", disco.Estilo.Id);
+                datos.SetearParametros("@idedicion", disco.Edicion.Id);
+                datos.SetearParametros("@id", disco.Id);
+                datos.EjecutarInsert();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally 
+            {
+                datos.ConnectionClose();
+            }
+            
         }
     }
 

@@ -23,6 +23,7 @@ namespace Desarrollo_App_Conexión_a_DB
         {
             InitializeComponent();
             this.disco = disco;
+            Text = "Modificar Disco";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -32,28 +33,38 @@ namespace Desarrollo_App_Conexión_a_DB
 
         private void btnAgregarDisco_Click(object sender, EventArgs e)
         {
-            Disco AgregarD = new Disco();
             DiscosServer negocio = new DiscosServer();
 
             try
             {
-                AgregarD.Titulo = txtTitulo.Text;
-                AgregarD.FechaDeLazamiento = dtpFecha.Value;
+                if (disco == null)
+                    disco = new Disco();
 
+                disco.Titulo = txtTitulo.Text;
+                disco.FechaDeLazamiento = dtpFecha.Value;
+                
                 if (!int.TryParse(txtCantidadCanciones.Text, out int cantidad))
                 {
                     MessageBox.Show("Ingrese un valor valido");
                     return;
                 }
-                AgregarD.CantidadDeCanciones = cantidad;
-                AgregarD.UrlImagenCover = txtUrlImagen.Text;
-                AgregarD.Estilo = (Estilos)cboEstilo.SelectedItem;
-                AgregarD.Edicion = (TipoEdicion)cboEdicion.SelectedItem;
+                disco.CantidadDeCanciones = cantidad;
+                disco.UrlImagenCover = txtUrlImagen.Text;
+                disco.Estilo = (Estilos)cboEstilo.SelectedItem;
+                disco.Edicion = (TipoEdicion)cboEdicion.SelectedItem;    
 
-                negocio.Agregar(AgregarD);
-
-                MessageBox.Show("Se agregó con éxito!");
-                Close();
+                if (disco.Id != 0)
+                {
+                    negocio.Modificar(disco);
+                    MessageBox.Show("Se modificó con éxito!");
+                    Close();
+                }
+                else
+                {
+                    negocio.Agregar(disco);
+                    MessageBox.Show("Se agregó con éxito!");
+                    Close();
+                }
             }
             catch (Exception ex)
             {
@@ -70,7 +81,11 @@ namespace Desarrollo_App_Conexión_a_DB
             try
             {
                 cboEstilo.DataSource = estilo.ListarEstilos();
+                cboEstilo.ValueMember = "Id";
+                cboEstilo.DisplayMember = "Descripcion";
                 cboEdicion.DataSource = formato.ListEdicion();
+                cboEdicion.ValueMember = "Id";
+                cboEdicion.DisplayMember = "Description";
 
                 if (disco != null)
                 {
@@ -78,6 +93,9 @@ namespace Desarrollo_App_Conexión_a_DB
                     dtpFecha.Value = disco.FechaDeLazamiento;
                     txtCantidadCanciones.Text = disco.CantidadDeCanciones.ToString();
                     txtUrlImagen.Text = disco.UrlImagenCover;
+                    cboEstilo.SelectedValue = disco.Estilo.Id;
+                    cboEdicion.SelectedValue = disco.Edicion.Id;
+                    ImageLoader(disco.UrlImagenCover);
 
                 }
             }

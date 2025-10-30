@@ -70,7 +70,6 @@ namespace Desarrollo_App_Conexión_a_DB
             seleccionado = (Disco)dgvDisco.CurrentRow.DataBoundItem;
             
             frmAgregarDisco modificar = new frmAgregarDisco(seleccionado);
-            modificar.Text = "Modificar Disco";
             modificar.ShowDialog();
             Cargar();
         }
