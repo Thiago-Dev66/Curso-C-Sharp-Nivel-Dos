@@ -116,6 +116,24 @@ namespace Negocio
             }
             
         }
+        public void Eliminar(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            Disco disco = new Disco();
+
+            try
+            {
+                datos.SetearConsulta("delete DISCOS where Id = @id");
+                datos.SetearParametros("@id", id);
+                datos.EjecutarInsert();
+
+            }
+            catch (Exception ex)
+            {
+
+                ex.ToString();
+            }
+        }
     }
 
 }

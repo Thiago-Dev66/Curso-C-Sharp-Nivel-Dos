@@ -51,6 +51,7 @@ namespace Desarrollo_App_Conexión_a_DB
                 ListaD = server.ListaDisco();
                 dgvDisco.DataSource = ListaD;
                 dgvDisco.Columns["UrlImagenCover"].Visible = false;
+                dgvDisco.Columns["Id"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -72,6 +73,31 @@ namespace Desarrollo_App_Conexión_a_DB
             frmAgregarDisco modificar = new frmAgregarDisco(seleccionado);
             modificar.ShowDialog();
             Cargar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DiscosServer discosServer = new DiscosServer();
+            Disco seleccionado;
+
+            try
+            {
+                DialogResult result = MessageBox.Show("Estas seguro que deseas eliminar?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    seleccionado = (Disco)dgvDisco.CurrentRow.DataBoundItem;
+                    discosServer.Eliminar(seleccionado.Id);
+                    Cargar();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
