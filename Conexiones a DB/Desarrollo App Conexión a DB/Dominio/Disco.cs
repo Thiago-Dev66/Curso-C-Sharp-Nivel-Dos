@@ -20,5 +20,6 @@ namespace Dominio
         public string UrlImagenCover { get; set; }
         public Estilos Estilo { get; set; }
         public TipoEdicion Edicion { get; set; }
+        public bool Activo { get; set; }
     }
 }

@@ -52,6 +52,7 @@ namespace Desarrollo_App_Conexión_a_DB
                 dgvDisco.DataSource = ListaD;
                 dgvDisco.Columns["UrlImagenCover"].Visible = false;
                 dgvDisco.Columns["Id"].Visible = false;
+               // dgvDisco.Columns["Activo"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -75,7 +76,7 @@ namespace Desarrollo_App_Conexión_a_DB
             Cargar();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void Eliminar(bool logico = false)
         {
             DiscosServer discosServer = new DiscosServer();
             Disco seleccionado;
@@ -87,7 +88,12 @@ namespace Desarrollo_App_Conexión_a_DB
                 if (result == DialogResult.Yes)
                 {
                     seleccionado = (Disco)dgvDisco.CurrentRow.DataBoundItem;
-                    discosServer.Eliminar(seleccionado.Id);
+
+                    if (logico)
+                        discosServer.EliminarLogico(seleccionado.Id);
+                    else
+                        discosServer.Eliminar(seleccionado.Id);
+                    
                     Cargar();
                 }
 
@@ -98,6 +104,15 @@ namespace Desarrollo_App_Conexión_a_DB
                 MessageBox.Show(ex.ToString());
             }
 
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+        private void btnEliminarLogico_Click(object sender, EventArgs e)
+        {
+            Eliminar(true);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

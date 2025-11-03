@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Dominio;
+using System.Windows.Forms;
 
 namespace Negocio 
 {
@@ -20,7 +21,7 @@ namespace Negocio
 
             conexion.ConnectionString = "server=(local)\\SQLEXPRESS; database=DISCOS_DB; integrated security=true;";
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "select Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa as Cover, e.Descripcion as Estilo, t.Descripcion as Formato, E.Id as IdEstilo, T.Id as IdEdicion, D.Id as IdDisco from DISCOS D, ESTILOS E, TIPOSEDICION T where e.Id = IdEstilo and t.Id = IdTipoEdicion";
+            cmd.CommandText = "select Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa as Cover, e.Descripcion as Estilo, t.Descripcion as Formato, E.Id as IdEstilo, T.Id as IdEdicion, D.Id as IdDisco, D.Activo from DISCOS D, ESTILOS E, TIPOSEDICION T where e.Id = D.IdEstilo and t.Id = D.IdTipoEdicion and D.Activo = 1";
             cmd.Connection = conexion;
 
             conexion.Open();
@@ -48,6 +49,8 @@ namespace Negocio
                     disco1.Edicion = new TipoEdicion();
                     disco1.Edicion.Id = (int)reader["IdEdicion"];
                     disco1.Edicion.Description = (string)reader["Formato"];
+                    disco1.Activo = (bool)reader["Activo"];
+
 
                     ListaD.Add(disco1);
                 }
@@ -75,7 +78,7 @@ namespace Negocio
                 datos.SetearParametros("@IdEstilo", disco.Estilo.Id);
                 datos.SetearParametros("@IdTipoEdicion", disco.Edicion.Id);
                 datos.SetearParametros("@UrlImagenTapa", disco.UrlImagenCover);
-                datos.EjecutarInsert();
+                datos.EjecutarAccion();
             }
             catch (Exception ex)
             {
@@ -88,6 +91,7 @@ namespace Negocio
 
             }
         }
+
         public void Modificar(Disco disco) 
         {
             AccesoDatos datos = new AccesoDatos();
@@ -102,7 +106,7 @@ namespace Negocio
                 datos.SetearParametros("@idestilo", disco.Estilo.Id);
                 datos.SetearParametros("@idedicion", disco.Edicion.Id);
                 datos.SetearParametros("@id", disco.Id);
-                datos.EjecutarInsert();
+                datos.EjecutarAccion();
 
             }
             catch (Exception ex)
@@ -116,6 +120,7 @@ namespace Negocio
             }
             
         }
+
         public void Eliminar(int id)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -125,13 +130,35 @@ namespace Negocio
             {
                 datos.SetearConsulta("delete DISCOS where Id = @id");
                 datos.SetearParametros("@id", id);
-                datos.EjecutarInsert();
+                datos.EjecutarAccion();
 
             }
             catch (Exception ex)
             {
 
                 ex.ToString();
+            }
+        }
+
+        public void EliminarLogico(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            Disco disco = new Disco();
+            try
+            {
+                datos.SetearConsulta("update discos set activo = 0 where id = @Id");
+                datos.SetearParametros("@Id", id);
+                datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                datos.ConnectionClose();
             }
         }
     }

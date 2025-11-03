@@ -43,7 +43,7 @@ namespace Negocio
                 throw e;
             }
         }
-        public void EjecutarInsert()
+        public void EjecutarAccion()
         {
             cmd.Connection = conn;
 
