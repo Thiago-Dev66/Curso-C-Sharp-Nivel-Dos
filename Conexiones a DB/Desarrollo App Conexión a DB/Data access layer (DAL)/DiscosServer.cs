@@ -161,6 +161,102 @@ namespace Negocio
                 datos.ConnectionClose();
             }
         }
+
+        public List<Disco> Filtrar(string parametro, string criterio, string filtro)
+        {
+            List<Disco> discosListaFiltrada = new List<Disco>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                string consulta = "select Titulo, convert(date, d.FechaLanzamiento) as FechaLanzamiento, CantidadCanciones, UrlImagenTapa as Cover, e.Descripcion as Estilo, t.Descripcion as Formato, E.Id as IdEstilo, T.Id as IdEdicion, D.Id as IdDisco, D.Activo " +
+                                  "from DISCOS D, ESTILOS E, TIPOSEDICION T " +
+                                  "where e.Id = D.IdEstilo " +
+                                  "and t.Id = D.IdTipoEdicion " +
+                                  "and D.Activo = 1 and ";
+
+                if (filtro == "")
+                    return ListaDisco();
+
+                switch (parametro)
+                {
+                    case "Titulo":
+                        switch (criterio)
+                        {
+                            case "Comienza con...":
+                                consulta += "Titulo like '" + filtro + "%'";
+                                break;
+                            case "Termina con...":
+                                consulta += "Titulo like '%" + filtro + "'";
+                                break;
+                            case "Contiene...":
+                                consulta += "Titulo like '%" + filtro + "%'";
+                                break;
+                        }
+                        break;
+
+                    case "Fecha de Lanzamiento":
+                        switch (criterio)
+                        {
+                            case "Mayor a...":
+                                consulta += "CONVERT(date, d.FechaLanzamiento) > " + "'" + filtro + "'";
+                                break;
+                            case "Menor a...":
+                                consulta += "CONVERT(date, d.FechaLanzamiento) < " + "'" + filtro + "'";
+                                break;
+                            case "Igual a...":
+                                consulta += "CONVERT(date, d.FechaLanzamiento) = " + "'" + filtro + "'";
+                                break;
+                        }
+                        break;
+
+                    case "Cantidad de Canciones":
+                        switch (criterio)
+                        {
+                            case "Mayor a...":
+                                consulta += "CantidadCanciones >  " + filtro;
+                                break;
+                            case "Menor a...":
+                                consulta += "CantidadCanciones < " + filtro;
+                                break;
+                            case "Igual a...":
+                                consulta += "CantidadCanciones = " + filtro; 
+                                break;
+                        }
+                        break;
+                }
+
+                datos.SetearConsulta(consulta);
+                datos.EjecutarReader();
+
+                while (datos.Reader.Read())
+                {
+                    Disco disco = new Disco();
+
+                    disco.Titulo = (string)datos.Reader["Titulo"];
+                    disco.FechaDeLazamiento = (DateTime)datos.Reader["FechaLanzamiento"];
+                    disco.CantidadDeCanciones = (int)datos.Reader["CantidadCanciones"];
+                    disco.UrlImagenCover = (string)datos.Reader["Cover"];
+                    disco.Estilo = new Estilos();
+                    disco.Estilo.Descripcion = (string)datos.Reader["Estilo"];
+                    disco.Edicion = new TipoEdicion();
+                    disco.Edicion.Description = (string)datos.Reader["Formato"];
+
+                    discosListaFiltrada.Add(disco);    
+                }
+
+                return discosListaFiltrada;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return new List<Disco>();
+            }
+            finally
+            {
+                datos.ConnectionClose();
+            }
+        }
     }
 
 }

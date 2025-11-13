@@ -24,6 +24,10 @@ namespace Desarrollo_App_Conexión_a_DB
         private void Form1_Load(object sender, EventArgs e)
         {
             Cargar();
+
+            cboParametro.Items.Add("Titulo");
+            cboParametro.Items.Add("Fecha de Lanzamiento");
+            cboParametro.Items.Add("Cantidad de Canciones");
         }
 
         private void dgvDisco_SelectionChanged(object sender, EventArgs e)
@@ -126,12 +130,12 @@ namespace Desarrollo_App_Conexión_a_DB
             Eliminar(true);
         }
 
-        private void btnFiltrar_Click(object sender, EventArgs e)
+        private void txtFiltrar_TextChanged(object sender, EventArgs e)
         {
             List<Disco> listaFiltrada;
             string filterText = txtFiltrar.Text;
 
-            if(filterText != "") //Si el textbox no está vacío buscamos la coincidencia
+            if (filterText.Length > 3) //Si el textbox tiene más de 3 caracteres aplicamos el filtro
             {
                 listaFiltrada = ListaD.FindAll(x => x.Titulo.ToUpper().Contains(filterText.ToUpper()) || x.Edicion.Description.ToUpper().Contains(filterText.ToUpper())); //Esto es una condición lógica (función lambda =>)
                 //"ListaD" es un tipo "List" y "List" es un tipo collection, por lo tanto tienen diferentes tipos de metodos. Aquí usamos el "FindAll" que
@@ -145,7 +149,6 @@ namespace Desarrollo_App_Conexión_a_DB
             dgvDisco.DataSource = null; //Actualizamos el datasource
             dgvDisco.DataSource = listaFiltrada; //Le damos la nueva lista filtrada
             OcultarColumnas();
-
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -153,5 +156,60 @@ namespace Desarrollo_App_Conexión_a_DB
             Close();
         }
 
+        private void cboParametro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cboParametro.SelectedItem?.ToString();
+
+            // mostrar/ocultar controles de filtro
+            bool esFecha = opcion == "Fecha de Lanzamiento";
+            txtFiltroAvanzado.Visible = !esFecha;
+            dtpFiltroAvanzado.Visible = esFecha;
+
+            // rellenar criterios
+            cboCriterio.Items.Clear();
+            if (opcion == "Titulo")
+            {
+                cboCriterio.Items.Add("Comienza con...");
+                cboCriterio.Items.Add("Termina con...");
+                cboCriterio.Items.Add("Contiene...");
+            }
+            else
+            {
+                cboCriterio.Items.Add("Mayor a...");
+                cboCriterio.Items.Add("Menor a...");
+                cboCriterio.Items.Add("Igual a...");
+            }
+        
+        }
+
+        private void btnFiltroAvanzado_Click(object sender, EventArgs e)
+        {
+            DiscosServer discosServer = new DiscosServer();
+            List<Disco> discosFiltrados = new List<Disco>();
+
+            try
+            {
+                string parametro = cboParametro.SelectedItem?.ToString();
+                string criterio = cboCriterio.SelectedItem?.ToString();
+                string filtro;
+
+                if (parametro == "Fecha de Lanzamiento")
+                    filtro = dtpFiltroAvanzado.Value.ToString("yyyy-MM-dd");
+                else
+                    filtro = txtFiltroAvanzado.Text.ToString();
+
+                    discosFiltrados = discosServer.Filtrar(parametro, criterio, filtro);
+
+                dgvDisco.DataSource = null;
+                dgvDisco.DataSource = discosFiltrados;
+                OcultarColumnas();
+
+            }
+            catch ( Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
