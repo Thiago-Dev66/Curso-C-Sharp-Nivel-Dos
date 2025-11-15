@@ -43,6 +43,7 @@
             this.pbxUrlImagen = new System.Windows.Forms.PictureBox();
             this.txtUrlImagen = new System.Windows.Forms.TextBox();
             this.lblUrlImagen = new System.Windows.Forms.Label();
+            this.btnAgregarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUrlImagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,7 +153,7 @@
             // 
             // pbxUrlImagen
             // 
-            this.pbxUrlImagen.Location = new System.Drawing.Point(467, 81);
+            this.pbxUrlImagen.Location = new System.Drawing.Point(522, 81);
             this.pbxUrlImagen.Name = "pbxUrlImagen";
             this.pbxUrlImagen.Size = new System.Drawing.Size(340, 286);
             this.pbxUrlImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -161,7 +162,7 @@
             // 
             // txtUrlImagen
             // 
-            this.txtUrlImagen.Location = new System.Drawing.Point(234, 249);
+            this.txtUrlImagen.Location = new System.Drawing.Point(234, 247);
             this.txtUrlImagen.Name = "txtUrlImagen";
             this.txtUrlImagen.Size = new System.Drawing.Size(195, 26);
             this.txtUrlImagen.TabIndex = 3;
@@ -176,11 +177,22 @@
             this.lblUrlImagen.TabIndex = 14;
             this.lblUrlImagen.Text = "Url Imagen";
             // 
+            // btnAgregarImagen
+            // 
+            this.btnAgregarImagen.Location = new System.Drawing.Point(435, 244);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(59, 32);
+            this.btnAgregarImagen.TabIndex = 15;
+            this.btnAgregarImagen.Text = "Add";
+            this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.brnAgregarImagen_Click);
+            // 
             // frmAgregarDisco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 479);
+            this.ClientSize = new System.Drawing.Size(914, 479);
+            this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.txtUrlImagen);
             this.Controls.Add(this.lblUrlImagen);
             this.Controls.Add(this.pbxUrlImagen);
@@ -196,6 +208,9 @@
             this.Controls.Add(this.lblCantidadCanciones);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAgregarDisco";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Disco";
@@ -223,5 +238,6 @@
         private System.Windows.Forms.PictureBox pbxUrlImagen;
         private System.Windows.Forms.TextBox txtUrlImagen;
         private System.Windows.Forms.Label lblUrlImagen;
+        private System.Windows.Forms.Button btnAgregarImagen;
     }
 }

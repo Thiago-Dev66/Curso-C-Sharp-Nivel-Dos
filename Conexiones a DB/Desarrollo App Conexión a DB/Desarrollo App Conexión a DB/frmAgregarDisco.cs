@@ -3,8 +3,10 @@ using Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +17,7 @@ namespace Desarrollo_App_Conexión_a_DB
     public partial class frmAgregarDisco : Form
     {
         private Disco disco = null;
+        private OpenFileDialog archivo = null;
         public frmAgregarDisco()
         {
             InitializeComponent();
@@ -64,6 +67,12 @@ namespace Desarrollo_App_Conexión_a_DB
                     negocio.Agregar(disco);
                     MessageBox.Show("Se agregó con éxito!");
                     Close();
+                }
+
+                //guardamos la imagen 
+                if (!txtUrlImagen.Text.ToUpper().Contains("HTTP") && archivo != null) 
+                {
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["appDisco-images"] + archivo.SafeFileName);
                 }
             }
             catch (Exception ex)
@@ -121,6 +130,26 @@ namespace Desarrollo_App_Conexión_a_DB
             {
 
                 pbxUrlImagen.Load("https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg");
+            }
+        }
+
+        private void brnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                archivo = new OpenFileDialog();
+                archivo.Filter = "jpg|*.jpg |png|*.png";
+
+                if (archivo.ShowDialog() == DialogResult.OK)
+                {
+                    txtUrlImagen.Text = archivo.FileName;
+                    ImageLoader(archivo.FileName);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
     }
