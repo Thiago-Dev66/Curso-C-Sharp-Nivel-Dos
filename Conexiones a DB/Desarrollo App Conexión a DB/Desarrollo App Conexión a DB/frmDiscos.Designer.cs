@@ -45,6 +45,8 @@
             this.txtFiltroAvanzado = new System.Windows.Forms.TextBox();
             this.lblFiltroAvanzado = new System.Windows.Forms.Label();
             this.dtpFiltroAvanzado = new System.Windows.Forms.DateTimePicker();
+            this.lblValidacionParametro = new System.Windows.Forms.Label();
+            this.lblValidacionCriterio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDisco)).BeginInit();
             this.SuspendLayout();
@@ -168,6 +170,7 @@
             this.cboCriterio.Name = "cboCriterio";
             this.cboCriterio.Size = new System.Drawing.Size(235, 28);
             this.cboCriterio.TabIndex = 10;
+            this.cboCriterio.SelectedIndexChanged += new System.EventHandler(this.cboCriterio_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -213,11 +216,31 @@
             this.dtpFiltroAvanzado.TabIndex = 15;
             this.dtpFiltroAvanzado.Visible = false;
             // 
+            // lblValidacionParametro
+            // 
+            this.lblValidacionParametro.AutoSize = true;
+            this.lblValidacionParametro.ForeColor = System.Drawing.Color.Red;
+            this.lblValidacionParametro.Location = new System.Drawing.Point(110, 525);
+            this.lblValidacionParametro.Name = "lblValidacionParametro";
+            this.lblValidacionParametro.Size = new System.Drawing.Size(0, 20);
+            this.lblValidacionParametro.TabIndex = 16;
+            // 
+            // lblValidacionCriterio
+            // 
+            this.lblValidacionCriterio.AutoSize = true;
+            this.lblValidacionCriterio.ForeColor = System.Drawing.Color.Red;
+            this.lblValidacionCriterio.Location = new System.Drawing.Point(439, 525);
+            this.lblValidacionCriterio.Name = "lblValidacionCriterio";
+            this.lblValidacionCriterio.Size = new System.Drawing.Size(0, 20);
+            this.lblValidacionCriterio.TabIndex = 17;
+            // 
             // DiscosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1424, 628);
+            this.Controls.Add(this.lblValidacionCriterio);
+            this.Controls.Add(this.lblValidacionParametro);
             this.Controls.Add(this.lblFiltroAvanzado);
             this.Controls.Add(this.btnFiltroAvanzado);
             this.Controls.Add(this.label2);
@@ -265,6 +288,8 @@
         private System.Windows.Forms.TextBox txtFiltroAvanzado;
         private System.Windows.Forms.Label lblFiltroAvanzado;
         private System.Windows.Forms.DateTimePicker dtpFiltroAvanzado;
+        private System.Windows.Forms.Label lblValidacionParametro;
+        private System.Windows.Forms.Label lblValidacionCriterio;
     }
 }
 

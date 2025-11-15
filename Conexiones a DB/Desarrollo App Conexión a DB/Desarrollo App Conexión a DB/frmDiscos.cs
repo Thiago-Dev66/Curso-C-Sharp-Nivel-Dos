@@ -160,6 +160,8 @@ namespace Desarrollo_App_Conexión_a_DB
         {
             string opcion = cboParametro.SelectedItem?.ToString();
 
+            lblValidacionParametro.Visible = false;
+
             // mostrar/ocultar controles de filtro
             bool esFecha = opcion == "Fecha de Lanzamiento";
             txtFiltroAvanzado.Visible = !esFecha;
@@ -181,6 +183,10 @@ namespace Desarrollo_App_Conexión_a_DB
             }
         
         }
+        private void cboCriterio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblValidacionCriterio.Visible = false;
+        }
 
         private void btnFiltroAvanzado_Click(object sender, EventArgs e)
         {
@@ -189,16 +195,23 @@ namespace Desarrollo_App_Conexión_a_DB
 
             try
             {
+                //El signo "?" es para evitar errores en caso de que no haya nada seleccionado. Es lo mismo que hacer un if para comprobar si es null 
                 string parametro = cboParametro.SelectedItem?.ToString();
+                if (parametro == null)
+                    lblValidacionParametro.Text = "*Debe seleccionar un parametro";
+
                 string criterio = cboCriterio.SelectedItem?.ToString();
+                if (criterio == null)
+                    lblValidacionCriterio.Text = "*Debe seleccionar un criterio";
+
                 string filtro;
 
                 if (parametro == "Fecha de Lanzamiento")
-                    filtro = dtpFiltroAvanzado.Value.ToString("yyyy-MM-dd");
+                    filtro = dtpFiltroAvanzado.Value.ToString("yyyy-MM-dd"); // Convertimos la fecha al formato que entiende SQL
                 else
-                    filtro = txtFiltroAvanzado.Text.ToString();
+                    filtro = txtFiltroAvanzado.Text.ToString(); //Si es texto lo dejamos igual
 
-                    discosFiltrados = discosServer.Filtrar(parametro, criterio, filtro);
+                discosFiltrados = discosServer.Filtrar(parametro, criterio, filtro);
 
                 dgvDisco.DataSource = null;
                 dgvDisco.DataSource = discosFiltrados;
@@ -211,5 +224,6 @@ namespace Desarrollo_App_Conexión_a_DB
                 MessageBox.Show(ex.ToString());
             }
         }
+
     }
 }
